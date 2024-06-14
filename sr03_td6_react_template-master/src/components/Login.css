@@ -1,0 +1,323 @@
+/*!* Ensure the background doesn't scale with the webpage *!*/
+/*body {*/
+/*    background-color: black;*/
+/*    overflow: hidden;*/
+/*    margin: 0;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*    position: relative;*/
+/*}*/
+
+/*.star-container {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    pointer-events: none; !* Ensures stars don't interfere with other elements *!*/
+/*}*/
+
+/*.star {*/
+/*    position: absolute;*/
+/*    border-radius: 50%;*/
+/*    background-color: white;*/
+/*    width: 3px;*/
+/*    height: 3px;*/
+/*    opacity: 0; !* Stars start invisible *!*/
+/*    animation: flicker 1s infinite ease-in-out alternate;*/
+/*}*/
+
+/*!* Random flicker effect using keyframes *!*/
+/*@keyframes flicker {*/
+/*    0%, 100% { opacity: 0; }*/
+/*    50% { opacity: 1; }*/
+/*}*/
+
+/*.logo {*/
+/*    position: absolute;*/
+/*    top: 30%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    text-align: center;*/
+/*    color: #FFFFFF;*/
+/*    margin: 0;*/
+/*    font-size: 55px;*/
+/*    font-family: 'Russo One', sans-serif;*/
+/*}*/
+
+/*.login {*/
+/*    overflow: hidden;*/
+/*    background-color: white;*/
+/*    padding: 40px 30px 30px 30px;*/
+/*    border-radius: 10px;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    width: 400px;*/
+/*    transform: translate(-50%, -50%);*/
+/*    transition: transform 300ms, box-shadow 300ms;*/
+/*    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);*/
+/*}*/
+
+/*.login::before,*/
+/*.login::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    width: 600px;*/
+/*    height: 600px;*/
+/*    border-top-left-radius: 40%;*/
+/*    border-top-right-radius: 45%;*/
+/*    border-bottom-left-radius: 35%;*/
+/*    border-bottom-right-radius: 40%;*/
+/*    z-index: -1;*/
+/*}*/
+
+/*.login::before {*/
+/*    left: 40%;*/
+/*    bottom: -130%;*/
+/*    background-color: rgba(69, 105, 144, 0.15);*/
+/*    animation: wawes 6s infinite linear;*/
+/*}*/
+
+/*.login::after {*/
+/*    left: 35%;*/
+/*    bottom: -125%;*/
+/*    background-color: rgba(2, 128, 144, 0.2);*/
+/*    animation: wawes 7s infinite;*/
+/*}*/
+
+/*.login > input {*/
+/*    font-family: 'Asap', sans-serif;*/
+/*    display: block;*/
+/*    border-radius: 5px;*/
+/*    font-size: 16px;*/
+/*    background: white;*/
+/*    width: 100%;*/
+/*    border: 0;*/
+/*    padding: 10px 10px;*/
+/*    margin: 15px 0px;*/
+/*}*/
+
+/*.login > button {*/
+/*    font-family: 'Asap', sans-serif;*/
+/*    cursor: pointer;*/
+/*    color: #fff;*/
+/*    font-size: 16px;*/
+/*    text-transform: uppercase;*/
+/*    width: 80px;*/
+/*    border: 0;*/
+/*    padding: 10px 0;*/
+/*    margin-top: 10px;*/
+/*    margin-left: 0px;*/
+/*    border-radius: 5px;*/
+/*    background-color: rgba(120, 86, 197, 1);*/
+/*    transition: background-color 300ms;*/
+/*}*/
+
+/*.login > button:hover {*/
+/*    background-color: rgba(110, 80, 180, 1);*/
+/*}*/
+
+/*@keyframes wawes {*/
+/*    from {*/
+/*        transform: rotate(0);*/
+/*    }*/
+/*    to {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+/*a {*/
+/*    text-decoration: none;*/
+/*    color: rgba(255, 255, 255, 0.6);*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    bottom: 10px;*/
+/*    font-size: 12px;*/
+/*}*/
+
+/*.login-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.form-control.is-invalid {*/
+/*    border: 2px solid red;*/
+/*}*/
+
+/*.error-message {*/
+/*    color: red;*/
+/*    margin-top: 5px;*/
+/*    max-height: 20px;*/
+/*    overflow: hidden;*/
+/*    text-overflow: ellipsis;*/
+/*    font-size: 0.9em;*/
+/*    text-align: right;*/
+/*    position: absolute;*/
+/*    top: 61%;*/
+/*    right: 5%;*/
+/*    font-family: 'Russo One', sans-serif;*/
+/*}*/
+
+body.login-page {
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    width: 3px;
+    height: 3px;
+    opacity: 0;
+    animation: flicker 1s infinite ease-in-out alternate;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.logo {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 58px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.login {
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 470px;
+    transform: translate(-50%, -50%);
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.login::before,
+.login::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+}
+
+.login::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba(69, 105, 144, 0.15);
+    animation: wawes 6s infinite linear;
+}
+
+.login::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba(2, 128, 144, 0.2);
+    animation: wawes 7s infinite;
+}
+
+.login > input {
+    font-family: 'Asap', sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px 0px;
+}
+
+.login > button {
+    font-family: 'Asap', sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: 0px;
+    border-radius: 5px;
+    background-color: rgba(120, 86, 197, 1);
+    transition: background-color 300ms;
+}
+
+.login > button:hover {
+    background-color: rgba(110, 80, 180, 1);
+}
+
+@keyframes wawes {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+a.login-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+.form-control.is-invalid {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    text-align: right;
+    position: absolute;
+    top: 61%;
+    right: 5%;
+    font-family: 'Russo One', sans-serif;
+}

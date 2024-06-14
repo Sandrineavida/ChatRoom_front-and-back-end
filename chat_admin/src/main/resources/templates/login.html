@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/html/css/login2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h1 class="logo">Admin login</h1>
+    <form id="loginForm" th:action="@{/login}" th:object="${user}" method="post" class="login">
+        <input type="email" class="form-control" id="mail" th:field="*{mail}"
+               th:classappend="${invalid != null && invalid ? ' is-invalid' : ''}"
+               th:placeholder="${invalid != null && invalid ? 'Incorrect email' : 'Email'}"
+               required>
+        <input type="password" id="password" th:field="*{password}"
+               th:classappend="${invalid != null && invalid ? ' is-invalid' : ''}"
+               th:placeholder="${invalid != null && invalid ? 'Incorrect password' : 'Password'}"
+               required>
+
+        <div th:if="${error}" class="error-message" th:text="${error}"></div>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script src="/html/js/login.js"></script>
+</body>
+</html>
