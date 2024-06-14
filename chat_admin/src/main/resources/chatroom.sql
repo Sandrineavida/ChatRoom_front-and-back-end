@@ -1,0 +1,1 @@
+INSERT INTO ChatRoom(description, duration, startTime, title, created_by) VALUES ('test1',10,'2024-05-24 14:30:00','test1',12);

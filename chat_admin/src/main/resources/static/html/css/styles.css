@@ -1,0 +1,48 @@
+/* 确定页面的整体布局 */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333399; /* 深蓝色 */
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    /* 导航栏样式 */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    background-color: #D2B48C; /* 茶色 */
+    flex: 0 0 200px; /* aside区域宽度 */
+    padding: 1rem;
+}
+
+footer {
+    background-color: #333399; /* 深蓝色 */
+    color: white;
+    padding: 1rem;
+}
+
+/* 适应屏幕尺寸的布局 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        order: -1; /* 将aside放到内容区域上面 */
+        flex: 0 0 auto; /* 适应内容高度 */
+    }
+}
+
+* { box-sizing: border-box }
