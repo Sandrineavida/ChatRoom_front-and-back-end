@@ -88,18 +88,150 @@ Les principaux indicateurs montrent une excellente performance environnementale 
 ## Instructions d'Utilisation
 
 ### Lacement de l'application
+Pour lancer l'application, vous devez exécuter le backend Spring Boot et le frontend React séparément.
+### Connexion (Login)
+Pour Login, il faut utiliser l'url suivant: `localhost:3000`
 
-### connexion
+Après être entré sur l'écran de connexion, vous devez entrer l'e-mail déjà enregistré dans la base de données et le mot de passe correspondant pour vous connecter. 
+Si l'e-mail entré n'est pas enregistré dans la base de données, une erreur correspondante sera signalée ; 
+si le mot de passe entré ne respecte pas les exigences "majuscules et minuscules, caractères spéciaux, longueur du mot de passe supérieure ou égale à 8", une erreur sera également signalée, 
+mais ces deux types d'erreurs ne sont pas comptés dans le nombre d'erreurs nécessaires pour verrouiller le compte ; 
+si l'e-mail est correctement entré, le format du mot de passe est correct, mais le mot de passe est incorrect trois fois, alors le compte sera verrouillé.
 
-### Planification du Chat
+[//]: # (![login.png]&#40;Readme_picture%2Flogin%2Flogin.png&#41;)
+<div style="text-align: center;">
+    <img src="Readme_picture/login/login.png" alt="Login" style="width: 50%; margin: 0 auto;">
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="Readme_picture/login/email does not exist.png" alt="email does not exist" style="width: 24%;">
+    <img src="Readme_picture/login/invalid pw format.png" alt="invalid pw format" style="width: 24%;">
+    <img src="Readme_picture/login/wrong pw.png" alt="wrong pw" style="width: 24%;">
+    <img src="Readme_picture/login/lock.png" alt="lock" style="width: 24%;">
+</div>
 
-### Participation du Chat
+### Accueil
+Après la connexion, vous serez redirigé vers la page d'accueil comme illustré ci-dessous. 
+Si vous êtes un utilisateur normal, vous ne pouvez pas accéder à la page d'administration;
+sinon, vous pouvez accéder à la page d'administration par cliquer sur le lien "Go to Admin Page".
 
-### Gestion des membres du Chat
+<div style="display: flex; justify-content: space-between;">
+    <img src="Readme_picture/accueil/accueil-user.png" alt="accueil-user" style="width: 48%;">
+    <img src="Readme_picture/accueil/accueil-admin.png" alt="accueil-admin" style="width: 48%;">
+</div>
+
+Dans la partie "Content" de l'Accueil, 
+les Chat Rooms créées par l'utilisateur actuel ainsi que celles auxquelles il a été invité à rejoindre seront affichées.
+
+### Mes salons de discussion
+Dans la page "Mes salons de discussion", vous pouvez voir les salons de discussion que vous avez créés. 
+La forme de l'affichage des informations est la même que celle de la page d'accueil.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/MesSalonsDeDiscution/mes_salons_de_discussion.png" alt="mes_salons_de_discussion" style="width: 48%;">
+</div>
+
+### Mes invitations
+Dans la page "Mes salons de discussion", vous pouvez voir les salons de discussion que vous avez été invité à rejoindre.
+La forme de l'affichage des informations est la même que celle de la page d'accueil.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/MesInvitations/mes_invitations.png" alt="mes_invitations" style="width: 48%;">
+</div>
+
+### Chat Room
+
+En cliquant sur le titre du Chat Room, vous pouvez entrer dans la salle de chat comme indiqué ci-dessous. 
+Comme le montrent les images, la zone de dialogue est à gauche, et les utilisateurs actuellement dans la salle de chat sont affichés à droite.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="Readme_picture/chatroom/chatroom1.png" alt="chatroom1" style="width: 33%;">
+    <img src="Readme_picture/chatroom/chatroom2.png" alt="chatroom2" style="width: 33%;">
+    <img src="Readme_picture/chatroom/chatroom3.png" alt="chatroom3" style="width: 33%;">
+</div>
+
+
+### Planifier une discussion
+Dans la page "Planifier une discussion", 
+vous pouvez créer un nouveau Chat Room
+* en entrant le nom du Chat Room
+* en entrant une description du Chat Room
+* en entrant le start time et une "duration"
+* et en sélectionnant les utilisateurs à inviter.
+
+Après avoir cliqué sur le bouton `Create` pour terminer la création, la page sera automatiquement redirigée vers la page 'Accueil' après une courte attente.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/planifierUneDiscussion/createChatRoom.png" alt="planifier_une_discussion" style="width: 48%;">
+</div>
+
+
+### Gestion du Chat
+* Si un utilisateur est un participant d'un Chat Room, alors il a le droit de "voir" (View) tous les utilisateurs de ce Chat Room.
+* Si cet utilisateur est le créateur d'un Chat Room, alors il peut "voir" (View), ajouter (Add) et supprimer (Remove) les utilisateurs de ce Chat Room; voire, supprimer (Delete) le Chat Room.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="Readme_picture/accueil/view.png" alt="view-user" style="width: 33%;">
+    <img src="Readme_picture/accueil/add.png" alt="add-user" style="width: 33%;">
+    <img src="Readme_picture/accueil/remove.png" alt="remove-user" style="width: 33%;">
+</div>
+
+Si le créateur de la salle de chat souhaite la supprimer, il peut cliquer sur le bouton `Delete ChatRoom`,
+puis une boîte de confirmation apparaîtra, comme le montre l'image ci-dessous.
+Si vous cliquez sur "Yes", la salle de chat sera supprimée, sinon, la salle de chat ne sera pas supprimée.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/accueil/confirme_delete_chatroom.png" alt="confirme_delete_chatroom" style="width: 48%;">
+</div>
 
 ### Gestion des utilisateurs (Admin)
 
+Pour les utilisateurs ayant le rôle d'administrateur, ils peuvent accéder à la page d'administration en cliquant sur le lien "Go to Admin Page" dans la page d'accueil.
 
+Après avoir cliqué sur le lien, pour des raisons de sécurité, nous avons décidé qu'il faut d'abord se connecter en tant qu'administrateur pour accéder à la page d'administration.
 
+<div style="text-align: center;">
+    <img src="Readme_picture/Admin/admin-login.png" alt="admin-login" style="width: 48%;">
+</div>
 
+Après avoir entré le bon e-mail et le bon mot de passe, vous serez redirigé vers une page d'accueil simple pour les administrateurs comme illustré ci-dessous.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/Admin/greeting.png" alt="admin-accueil" style="width: 48%;">
+</div>
+
+#### Ajouter un utilisateur
+
+En cliquant sur le button `Ajouter un utilisateur`, vous allez rediriger vers une page pour ajouter un nouvel utilisateur.
+Lorsqu'un utilisateur est ajouté avec succès, un message de succès s'affiche.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="Readme_picture/Admin/add_user1.png" alt="add-user" style="width: 48%;">
+    <img src="Readme_picture/Admin/add_user2.png" alt="add-user-success" style="width: 48%;">
+</div>
+
+#### Liste des utilisateurs
+
+En cliquant sur le button `Liste des utilisateurs`, vous pouvez voir la liste des utilisateurs enregistrés dans la base de données.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/Admin/Liste_des_utilisateurs.png" alt="liste_des_utilisateurs" style="width: 48%;">
+</div>
+
+Nous affichons les informations de tous les utilisateurs dans l'ensemble de données :
+* Nom (cliquez pour trier par ordre alphabétique ; tri par défaut sur la colonne Nom)
+* Prénom (cliquez pour trier par ordre alphabétique)
+* Email (cliquez pour trier par ordre alphabétique)
+* Etat (si l'utilisateur est verrouillé ou non)
+
+Nous pouvons également utiliser la barre de recherche pour retrouver rapidement un utilisateur, le mot-clé étant l'email de l'utilisateur.
+
+Pour un utilisateur non-admin, nous pouvons effectuer les actions suivantes :
+* Supprimer
+* Verrouiller / Déverrouiller
+
+Lors de la suppression d'un utilisateur, comme le montre l'image ci-dessous, nous devons d'abord confirmer si nous voulons vraiment supprimer cet utilisateur.
+
+<div style="text-align: center;">
+    <img src="Readme_picture/Admin/add_user3.png" alt="delete_user" style="width: 48%;">
+</div>
 

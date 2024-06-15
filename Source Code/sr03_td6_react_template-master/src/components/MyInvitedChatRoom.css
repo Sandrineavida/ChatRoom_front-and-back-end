@@ -1,0 +1,97 @@
+/* ChatList.css */
+
+.chatlist-header {
+    height: 60px;
+    background-color: black;
+    color: #ffeebe;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px; /* Adjusted for more spacing on the sides */
+    font-family: "Russo One";
+    font-size: 25px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    border-bottom: 2px solid #333333; /* Add light grey bottom border */
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+
+.chatlist-nav {
+    height: 60px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Ensure items wrap when needed */
+}
+
+.chatlist-container-fluid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Ensure items wrap when needed */
+}
+
+.chatlist-navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure items wrap when needed */
+}
+
+.chatlist-nav-link {
+    margin-left: 20px;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.chatlist-content {
+    display: flex;
+    height: calc(100% - 110px); /* Adjusted to account for header and nav height */
+    width: 100%;
+}
+
+.chatlist-aside {
+    width: 20%;
+    background-color: #1e1f26;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.chatlist-aside .chatlist-user-info {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.chatlist-main {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.chatlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #444 !important; /* Dark background for table */
+    color: #4B0082 !important; /* Dark purple text color */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/***********************************************/
+/* BOOTSTRAP OVERRIDE */
+/***********************************************/
+.chatlist-navbar-brand, .chatlist-nav-link {
+    color: #fff !important;
+}
+
+.chat-title {
+    cursor: pointer;
+}
+
